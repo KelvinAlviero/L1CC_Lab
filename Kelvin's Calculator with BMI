@@ -1,0 +1,49 @@
+print("1.Addition")
+print("2.Subtraction")
+print("3.Multiplication")
+print("4.Division")
+print("5.BMI Calculator")
+
+while True:
+    choice= input("Enter a number from 1-4 to choose operator:")
+
+    if choice in('1','2','3','4'):
+        try:
+            V1=float(input("Enter first value:"))
+            V2=float(input("Enter second value:"))
+        except ValueError:
+            print("Incorrect value,try again")
+            continue
+    if choice in('5'):
+        try:
+            height=float(input("Please enter height in cm:"))
+            weight=int(input("Please enter weight in kg:"))
+            Combined= weight/float(height*height)
+        except ValueError:
+            print("Incorrect value, try again")
+            continue
+
+        if choice == '1':
+            print("Addition")
+            print(V1,"+", V2,"=",(V1+V2))
+        elif choice == '2':
+            print("Substraction")
+            print(V1, "-", V2, "=", (V1 - V2))
+        elif choice == '3':
+            print("Multiplication")
+            print(V1, "x", V2, "=", (V1 * V2))
+        elif choice == '4':
+            print("Division")
+            print(V1, "/", V2, "=", (V1 / V2))
+        elif choice == '5':
+            if Combined < 18.5:
+                print("Underweight")
+        if Combined >= 18.25 and Combined < 25:
+            print("Normal")
+        if Combined >= 25 and Combined < 30:
+            print("Overweight")
+        NEXT=input("Would you like to calculate again?(Y/N)")
+        if NEXT == "N":
+            break
+    else:
+        print("Invalid number, try again")
